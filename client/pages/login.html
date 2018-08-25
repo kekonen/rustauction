@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<meta>
+		<meta charset="UTF-8">
+		<title>Login</title>
+	</meta>
+
+	<body>
+	
+		<div id="indexApp">
+			<h1>{{ msg }}</h1>
+			<form action="/login">
+				Login:<br>
+				<input type="text" name="login">
+				<br>
+				Password:<br>
+				<input type="password" name="password">
+				<br><br>
+				<input type="submit" value="Submit">
+			</form> 
+		</div>
+
+		<script
+			src="src/vue.debug.js">
+		</script>
+
+		<script>
+			new Vue({
+				el: "#indexApp",
+				data() {
+					return {
+						msg: "Hello, please Login!"
+					}
+				}
+			});
+		</script>
+
+	</body>
+</html>

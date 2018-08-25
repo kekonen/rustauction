@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta>
+    <meta charset="UTF-8">
+    <title>Hello World in Vue.js</title>
+  </meta>
+
+  <body>
+	
+    <div id="indexApp">
+      <h1>{{ msg }}</h1>
+    </div>
+
+    <script
+      src="src/vue.debug.js">
+    </script>
+
+    <script>
+      new Vue({
+        el: "#indexApp",
+        data() {
+          return {
+            msg: "Hello World!"
+          }
+        }
+      });
+    </script>
+
+  </body>
+</html>

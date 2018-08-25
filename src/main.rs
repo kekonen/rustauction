@@ -8,15 +8,21 @@ use std::io;
 
 #[get("/")]
 fn index() -> io::Result<NamedFile> {
-    NamedFile::open("client/dist/index.html")
+    NamedFile::open("client/pages/index.html")
+    // format!("Hello, {} year old named {}!", age, name)
+}
+
+#[get("/login")]
+fn login() -> io::Result<NamedFile> {
+    NamedFile::open("client/pages/login.html")
     // format!("Hello, {} year old named {}!", age, name)
 }
 
 #[get("/<file..>")]
 fn files(file: PathBuf) -> Option<NamedFile> {
-    NamedFile::open(Path::new("client/dist/").join(file)).ok()
+    NamedFile::open(Path::new("client/src/").join(file)).ok()
 }
 
 fn main() {
-    rocket::ignite().mount("/", routes![index, files]).launch();
+    rocket::ignite().mount("/", routes![index, files, login]).launch();
 }
